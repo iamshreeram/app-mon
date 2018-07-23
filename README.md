@@ -1,2 +1,2 @@
-# service-health-tracker
-Single page application health tracker
+# app-mon
+Appmon is single page application to monitor the health of apps

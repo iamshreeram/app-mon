@@ -14,9 +14,20 @@ Output of the script will look like below :
     <br>
 </p>
 
-## Used languages
+## How to use
+
+* Clone this repo 
+```
+git clone https://github.com/iamshreeram/app-mon.git
+cd app-mon
+touch url_file
 
 ```
-HTML, CSS, Javascript, Shell
-```
+* Add the `url_file` that contains list of all tomcat `version.html` URLs 
+* Run the script `main.sh`
+
+
+## Languages
+> * Shell
+> * HTML, CSS, Javascript 
  

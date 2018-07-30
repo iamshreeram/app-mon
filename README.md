@@ -21,7 +21,6 @@ Output of the script will look like below :
 git clone https://github.com/iamshreeram/app-mon.git
 cd app-mon
 touch url_file
-
 ```
 * Add the `url_file` that contains list of all tomcat `version.html` URLs 
 * Run the script `main.sh`

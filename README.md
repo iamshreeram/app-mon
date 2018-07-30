@@ -36,11 +36,12 @@ touch url_file
  
 ## Enhancements
 * ~~Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex~~
+* Enable to run sub-processes which can monitor the health of direct URLs
+	1. Create .conf file which contains list of components to be created 
+	2. For each component in list, create a file with same name and add list of all direct URLs
+	3. Script will create a new folder with component name and move the direct url file to created folder
+	4. Copy of Script will be posted in folder and self started
+	5. Script would read the urls from file and create the status tile based on direct urls
 * Add Date picker, Search bar to look at specific application on specific date
 * Enable Javascript to display version of application in tooltip on mouse over of tile
 * Create and append a Logo on left top of dashboard 
-
-
-
-
-

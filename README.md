@@ -42,6 +42,7 @@ touch url_file
 	3. Script will create a new folder with component name and move the direct url file to created folder
 	4. Copy of Script will be posted in folder and self started
 	5. Script would read the urls from file and create the status tile based on direct urls
+* `xdata` in the script is not dependent on time. Make it a dependent variable. So that each `tile` will get created based on time of validation
 * Add Date picker, Search bar to look at specific application on specific date
 * Enable Javascript to display version of application in tooltip on mouse over of tile
 * Create and append a Logo on left top of dashboard 

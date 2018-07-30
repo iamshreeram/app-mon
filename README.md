@@ -29,4 +29,12 @@ touch url_file
 ## Languages
 > * Shell
 > * HTML, CSS, Javascript 
+
+## Notes 
+* Dashboard is totally based on response of version.html.
+
  
+## Enhancements
+* Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex
+* 
+

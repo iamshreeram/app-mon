@@ -9,7 +9,9 @@ TILE='<rect class=status width=20 height=20 x=xdata y=ydata v=version />'
 CLOCK='<text x=xtimloc y=ytimloc>hour:00</text>'
 COMP='<text dx=xaxis dy=yaxis>comp</text>'
 OUT='index.html'
+ver_re='^[0-9]+([.][0-9]+)?$'
 url_file=$1
+
 
 statfile_checker(){
 if [[ ! -z ${STATFILE} ]];
@@ -97,10 +99,15 @@ xdata=$1
                 val=$(wget  -S "http://$line/version.html" 2>&1 | grep "HTTP/" | awk '{print $2}')
                 if [[ $val == 200 ]]; then
                         version_no=$(grep Version version.html|awk  '{print $3}'|awk -F '<' '{print $2}'|awk -F '>' '{print $2}')
-			add_tile $xdata $ydata "pass" $version_no
-                        rm -rf version.html;
+						if ! [[ $yournumber =~ $ver_re ]] ; then
+							add_tile $xdata $ydata "pass" "NOTFOUND"
+						else
+							add_tile $xdata $ydata "pass" $version_no
+						fi
+						rm -rf version.html*
                 else
-			add_tile $xdata $ydata "fail" "ERROR"
+						add_tile $xdata $ydata "fail" "ERROR"
+						rm -rf version.html*
                 fi
 		ydata=$((ydata+30))
         done <"$file"

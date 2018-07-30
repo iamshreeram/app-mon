@@ -31,10 +31,16 @@ touch url_file
 > * HTML, CSS, Javascript 
 
 ## Notes 
-* Dashboard is totally based on response of version.html.
+* Dashboard is totally based on response of `version.html`
 
  
 ## Enhancements
-* Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex
-* 
+* ~~Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex~~
+* Add Date picker, Search bar to look at specific application on specific date
+* Enable Javascript to display version of application in tooltip on mouse over of tile
+* Create and append a Logo on left top of dashboard 
+
+
+
+
 

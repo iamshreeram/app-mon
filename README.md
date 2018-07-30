@@ -31,8 +31,9 @@ touch url_file
 > * HTML, CSS, Javascript 
 
 ## Notes 
-* Dashboard is totally based on response of `version.html`
-
+* Dashboard is based on response of `version.html`
+* Script needs a HTTP server to run
+* To make it simple and light weight, Addition of external libraries are avoided 
  
 ## Enhancements
 * ~~Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex~~

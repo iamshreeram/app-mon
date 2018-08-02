@@ -47,8 +47,8 @@ copy_executor()
 	if [[-z ${app}/url_file_${app} ]];
 		then
 			mkdir $app
-		fi
-	done	
+	fi
+
 }
 
 # start the script as sub-process 

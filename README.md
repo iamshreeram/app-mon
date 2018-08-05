@@ -37,6 +37,7 @@ touch url_file
  
 ## Enhancements
 * ~~Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex~~
+* Need to make the `add_tile` function as asynchronous recursion. Currently, `sleep` is using lot of CPU
 * Enable to run sub-processes which can monitor the health of direct URLs
 	1. Create .conf file which contains list of components to be created 
 	2. For each component in list, create a file with same name and add list of all direct URLs

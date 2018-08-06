@@ -9,7 +9,7 @@ Output of the script will look like below :
 
 <p align="center">
     <a href="#">
-        <img src="https://cdn.rawgit.com/iamshreeram/app-mon/master/AppStatus.png" />
+        <img src="https://github.com/iamshreeram/app-mon/tree/master/images/AppStatus.png" />
     </a>
     <br>
 </p>

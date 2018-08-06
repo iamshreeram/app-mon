@@ -2,9 +2,9 @@
 #set -x
 STATFILE='StatusOutput'
 OUT='index.html'
-CONFIG='app.conf'
-INST_URLS=instanceurl_file
-INST_NAMES=instance_names
+CONFIG='config/app.conf'
+INST_URLS='config/instanceurl_file'
+INST_NAMES='config/instance_names'
 
 HEADER='<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta></head><style>body{background-color:black}.pass{fill:green}.fail{fill:red}.warn{fill:orange}.status{fill:gray}svg{font-size:14px;fill:#fff;background-color:black;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}text.month-90deg{transform:rotate(90deg)}</style><body><br /><br /><br /><div><div><svg width="1900" height="1050" >'
 FOOTER='</svg></div></div></div></body></html>'

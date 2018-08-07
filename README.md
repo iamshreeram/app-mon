@@ -36,11 +36,11 @@ touch url_file
 * To make it simple and light weight, Addition of external libraries are avoided 
  
 ## Enhancements
-* ~~Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex~~
-* Need to make the `add_tile` function as asynchronous recursion. Currently, `sleep` is using lot of CPU
+* ~~Position of version is hard coded and script doesn't have any intelligence. Need to make it as regex~~ -> Postition is still hard coded. Currently, `xdata` is based on previous data in the `xdata.pid` file  
+* ~~Need to make the `add_tile` function as asynchronous recursion. Currently, `sleep` is using lot of CPU~~ -> Done Spliting and by creating new `xdata.pid` file
 * Enable to run sub-processes which can monitor the health of direct URLs
-	1. Create .conf file which contains list of components to be created 
-	2. For each component in list, create a file with same name and add list of all direct URLs
+	1. ~~Create .conf file which contains list of components to be created~~ 
+	2. ~~For each component in list, create a file with same name and add list of all direct URLs~~
 	3. Script will create a new folder with component name and move the direct url file to created folder
 	4. Copy of Script will be posted in folder and self started
 	5. Script would read the urls from file and create the status tile based on direct urls

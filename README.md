@@ -20,11 +20,17 @@ Output of the script will look like below :
 ```
 git clone https://github.com/iamshreeram/app-mon.git
 cd app-mon
-touch url_file
+touch config/app.conf
 ```
-* Add the `url_file` that contains list of all tomcat `version.html` URLs 
-* Run the script `main.sh`
+* Add the `app.conf` that contains list of all tomcat `version.html` URLs in format of `Component-name, Tomcat-Urls `
+* Run the script `indexcreator.sh` to create index page
+* Configure the status checking functionality to run asynchronous by adding `addtile.sh` in `crontab -e`
+* Crontab config looks like below
 
+> * 0 0 * * * /path-of-your-git-clone/app-mon/indexcreator.sh
+> * 1,31 * * * * /path-of-your-git-clone/app-mon/addtile.sh
+
+* This will Enable cron job to run `indexcreator.sh` every day at `00:00` and check status every `1st minutes` and `31st minutes`
 
 ## Languages
 > * Shell

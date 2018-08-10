@@ -23,15 +23,12 @@ read_config() {
 	if [[ `echo $CONFIG` == *,* ]];
 	then
 		COMPHEADER=`echo $CONFIG | sed 's/,[A-Za-z0-9.:-]*//g' | sed 's/\/[A-Za-z0-9-]*//g'`;
-		COMPURL=`echo $CONFIG | sed 's/[A-Za-z0-9_-/]*,//g'`;
 	elif [[ `echo $CONFIG` == */* ]];
 	then
 		COMPHEADER=`echo $CONFIG | sed 's/[A-Za-z0-9.:-]*\///g'`;
-		COMPURL=`echo $CONFIG`;
 	elif ! ([[ `echo $CONFIG` == *,* ]] || [[ `echo $CONFIG` == */* ]]);
 	then
 		COMPHEADER=`cat $INST_NAMES`
-		COMPURL=`cat $INST_URLS`
 	else
 		echo "<h1>Can't monitor the application. Config file is missing or corrupted.</h1>">>$OUT
 		exit 1

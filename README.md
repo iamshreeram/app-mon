@@ -54,3 +54,4 @@ touch config/app.conf
 * Add Date picker, Search bar to look at specific application on specific date
 * Enable Javascript to display version of application in tooltip on mouse over of tile
 * Create and append a Logo on left top of dashboard 
+* Use `iframe` and modularize the page based on component

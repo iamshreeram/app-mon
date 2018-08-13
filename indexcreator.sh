@@ -1,14 +1,20 @@
+
 #!/bin/bash
 #set -x
 CURRHOME=`pwd`
 STATFILE=`echo $CURRHOME/StatusOutput`
-OUT=`echo $CURRHOME/index.html`
+OUT=`echo $CURRHOME/today.html`
 CONFIG=`echo $CURRHOME/config/app.conf`
 INST_URLS=`echo $CURRHOME/config/instanceurl_file`
 INST_NAMES=`echo $CURRHOME/config/instance_names`
 XDATAFILE=`echo $CURRHOME/xdata.pid`
 
-HEADER='<!DOCTYPE html><html lang="en"><head><link rel="icon" type="image/x-icon" href="favicon.ico" /><meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta><meta http-equiv="refresh" content="300"></meta></head><style>body{background-color:black}h1{Color:white}.pass{fill:green}.fail{fill:red}.warn{fill:orange}.status{fill:gray}svg{font-size:14px;fill:#fff;background-color:black;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}text.month-90deg{transform:rotate(90deg)}</style><body><br /><br /><br /><div><div><svg width="1900" height="1050" >'
+avgspacefortile=32
+height=`expr \`cat config/app.conf | wc -l\` \* $avgspacefortile`
+
+FRAME='<!DOCTYPE html><html lang="en"><head><title>App Mon</title><link rel="icon" type="image/x-icon" href="favicon.ico" /><meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta><meta http-equiv="refresh" content="30"></meta></head><style>body{background-color:black}h1{Color:white}.pass{fill:green}.fail{fill:red}.warn{fill:orange}.status{fill:gray}svg{font-size:14px;fill:#fff;background-color:black;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}text.month-90deg{transform:rotate(90deg)}</style><body><div><div>'
+SIZEDEF="<svg width=\"1900\" height=\"$height\">"
+HEADER=`echo $FRAME $SIZEDEF`
 FOOTER='</svg></div></div></div></body></html>'
 GTRANSFORM='<g transform="translate(0, 40)">'
 CLOSEG='</g>'
@@ -23,12 +29,15 @@ read_config() {
 	if [[ `echo $CONFIG` == *,* ]];
 	then
 		COMPHEADER=`echo $CONFIG | sed 's/,[A-Za-z0-9.:-]*//g' | sed 's/\/[A-Za-z0-9-]*//g'`;
+		COMPURL=`echo $CONFIG | sed 's/[A-Za-z0-9_-/]*,//g'`;
 	elif [[ `echo $CONFIG` == */* ]];
 	then
 		COMPHEADER=`echo $CONFIG | sed 's/[A-Za-z0-9.:-]*\///g'`;
+		COMPURL=`echo $CONFIG`;
 	elif ! ([[ `echo $CONFIG` == *,* ]] || [[ `echo $CONFIG` == */* ]]);
 	then
 		COMPHEADER=`cat $INST_NAMES`
+		COMPURL=`cat $INST_URLS`
 	else
 		echo "<h1>Can't monitor the application. Config file is missing or corrupted.</h1>">>$OUT
 		exit 1
@@ -109,13 +118,13 @@ index_end(){
 env_check(){
 if [ -f ${OUT} ]
   then
-  	index_end
-  	mv $OUT $CURRDATE.html
-  	xdatafile_checker
+	index_end
+	mv $OUT $CURRDATE.html
+	xdatafile_checker
   fi
 }
 
-indexcreator(){
+main(){
 	env_check
 	statfile_checker
 	indexfile_checker
@@ -124,4 +133,4 @@ indexcreator(){
 	get_compnt_list
 	index_addcomp
 }
-indexcreator
+main

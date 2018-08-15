@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <title>Health Mon</title>
+    <link rel="stylesheet" type="text/css" href="assets/mainstyle.css" />
+    <link rel="stylesheet" type="text/css" href="assets/headerstyle.css" />
+    <link rel="stylesheet" type="text/css" href="assets/style.css" />
+    <script type="text/javascript" src="assets/mainscript.js"> </script>
+  </head>
+  <body style="display: flex; height: 100%; flex-direction: column">
+    <div>
+        <div class="header1 display: flex; height: 100%; flex-direction: column" style="height:40px; text-align: center; background-color:#1a1a1a;">
+          <h1 id="hea" style="color:#ffffff; font-size:x-large; margin-top: 10px; margin-left: 15px; float:left">One</h1>
+          <h1 id="hea" style="color:#10ffd5; font-size:x-large; margin-top: 10px; margin-left: 5px; float:left">Health</h1>
+          <input type="date" min="2018-08-12" class="display: flex; height: 100%; flex-direction: column;" id='dt' onchange="handler(event);" style="float:right; margin-top: 10px;margin-right: 40px; text-align:left;"/>
+        </div>
+        <div>
+      </div>
+    </div>
+    <div style="flex: 1; overflow: auto" class="ex3">
+      <iframe  id="dt" src="today.html" height="2000" width="1910"></iframe>
+      </div>
+  </body>
+</html>

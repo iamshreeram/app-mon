@@ -23,12 +23,14 @@ cd app-mon
 touch config/app.conf
 ```
 * Add the `app.conf` that contains list of all tomcat `version.html` URLs in format of `Component-name, Tomcat-Urls `
-* Run the script `indexcreator.sh` to create index page
-* Configure the status checking functionality to run asynchronous by adding `addtile.sh` in `crontab -e`
+* Run the script `indexcreator.sh` to create main app monitoring page and `indexcreator.sh i` to create instance level monitoring page
+* Configure the status checking functionality to run asynchronous by adding `addtile.sh` and `addtile.sh i`  in `crontab -e`
 * Crontab config looks like below
 
 > * 0 0 * * * /path-of-your-git-clone/app-mon/indexcreator.sh
+> * 0 0 * * * /path-of-your-git-clone/app-mon/indexcreator.sh i
 > * 1,31 * * * * /path-of-your-git-clone/app-mon/addtile.sh
+> * 1,31 * * * * /path-of-your-git-clone/app-mon/addtile.sh i
 
 * This will Enable cron job to run `indexcreator.sh` every day at `00:00` and check status every `1st minutes` and `31st minutes`
 

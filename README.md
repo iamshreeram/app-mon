@@ -1,4 +1,6 @@
 # app-mon
+[![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
+
 Appmon is single page web-app to monitor the health of every Tomcat applications in your organization
 
 ## How does it work?

@@ -1,5 +1,5 @@
 # app-mon
-[![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
+[![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/) [![made-with-bash](https://img.shields.io/badge/Powered%20by%20-Node.js-brightgreen.svg)]
 
 Appmon is single page web-app to monitor the health of every Tomcat applications in your organization
 
